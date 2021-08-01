@@ -3,6 +3,8 @@ import {
   MobileIcon,
   Nav,
   NavBarContainer,
+  NavBtn,
+  NavBtnLink,
   NavItem,
   NavLinks,
   NavLogo,
@@ -23,9 +25,21 @@ export const NavBar: React.FC<INavBarProps> = () => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about"></NavLinks>
+              <NavLinks to="about">About</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="discover">Discover</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="sevices">Services</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="signup">Sign Up</NavLinks>
             </NavItem>
           </NavMenu>
+          <NavBtn>
+            <NavBtnLink to="signin">Sign in</NavBtnLink>
+          </NavBtn>
         </NavBarContainer>
       </Nav>
     </>
