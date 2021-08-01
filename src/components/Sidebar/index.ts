@@ -1,1 +1,2 @@
-export * from './SidebarElement';
+export * from './SidebarElements';
+export * from './Sidebar';

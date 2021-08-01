@@ -38,7 +38,7 @@ export const NavBar: React.FC<INavBarProps> = () => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="signin">Sign in</NavBtnLink>
+            <NavBtnLink to="/signin">Sign in</NavBtnLink>
           </NavBtn>
         </NavBarContainer>
       </Nav>
