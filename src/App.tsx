@@ -1,20 +1,27 @@
-import './App.css';
-import NavBar from './components/NavBar';
-import { BrowserRouter as Router } from 'react-router-dom';
-import SideBar from './components/Sidebar/Sidebar';
-import { useCallback, useState } from 'react';
+import "./App.css";
+import NavBar from "./components/NavBar";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import SideBar from "./components/Sidebar/Sidebar";
+import { useCallback, useReducer, useState } from "react";
+import HomeStyled from "./pages/HomeStyled";
+import HomeTailwind from "./pages/HomeTailwind";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleIsOpen = useCallback(() => setIsOpen((prevIsOpen) => !prevIsOpen), [setIsOpen]);
+  const [isOpen, toggleIsOpen] = useReducer((s) => !s, false);
 
   return (
     <Router>
-      <div className="App">
-        <SideBar {...{ isOpen, toggleIsOpen }} />
-        <NavBar {...{ toggleIsOpen }} />
-      </div>
+      <Switch>
+        <Route path="/" exact>
+          <HomeStyled isOpen={isOpen} toggleIsOpen={toggleIsOpen}></HomeStyled>
+        </Route>
+        <Route path="/tailwind">
+          <HomeTailwind
+            isOpen={isOpen}
+            toggleIsOpen={toggleIsOpen}
+          ></HomeTailwind>
+        </Route>
+      </Switch>
     </Router>
   );
 }
