@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { RouteComponentProps } from "react-router-dom";
 import SideBar from "../components/Sidebar/Sidebar";
-import { Link as LinkS } from "react-scroll";
-import { Link as LinkR } from "react-router-dom";
+import "./HomeTailwind.css";
 import {
   NavBtnContainer,
   NavBtn,
@@ -13,6 +11,7 @@ import {
   NavLinkContainer,
   MobileIcon,
 } from "../components/tailwind/NavElement";
+import { Link as LinkS } from "react-scroll";
 
 export default function HomeTailwind({
   isOpen,
@@ -30,9 +29,51 @@ export default function HomeTailwind({
 
   return (
     <div className="App">
-      <SideBar {...{ isOpen, toggleIsOpen }} />
-      <div className="h-20 bg-black sticky flex transition-all ease-in-out items-center justify-center">
-        <div className="px-6 flex items-center justify-between container max-w-6xl">
+      {/* <SideBar {...{ isOpen, toggleIsOpen }} /> */}
+      <aside
+        className={`${
+          isOpen ? "block" : "hidden"
+        } md:hidden w-screen h-screen absolute inset-0 bg-black z-50`}
+        onClick={toggleIsOpen}
+      >
+        <div className="flex flex-col  items-center justify-evenly h-full w-full">
+          <div
+            className="h-8 absolute top-10 right-10"
+            onClick={(e) => {
+              toggleIsOpen();
+              e.stopPropagation();
+            }}
+          >
+            <FaTimes className="text-white text-3xl"></FaTimes>
+          </div>
+          <div className="flex flex-col justify-evenly">
+            <ul className="flex flex-col justify-evenly items-center text-2xl text-white">
+              <li className="py-4 cursor-pointer hover:scale-x-110">
+                <LinkS to="">About</LinkS>
+              </li>
+              <li className="py-4 cursor-pointer hover:scale-x-110">
+                <LinkS to="">Services</LinkS>
+              </li>
+              <li className="py-4 cursor-pointer hover:scale-x-110">
+                <LinkS to="">Contact Us</LinkS>
+              </li>
+              <li className="py-4 cursor-pointer hover:scale-x-110">
+                <LinkS to="">Sign Up</LinkS>
+              </li>
+            </ul>
+          </div>
+          <NavBtnContainer className="">
+            <NavBtn
+              className="px-12 py-4 text-2xl"
+              style={{ borderRadius: "2rem" }}
+            >
+              <NavBtnLink to="signin">Sign In</NavBtnLink>
+            </NavBtn>
+          </NavBtnContainer>
+        </div>
+      </aside>
+      <div className="nav-bar">
+        <div className="nav-container">
           <div className="text-2xl font-bold text-white text-center">
             <p>dolla</p>
           </div>
@@ -50,12 +91,12 @@ export default function HomeTailwind({
               <NavLink to="signup">Sign Up</NavLink>
             </NavItem>
           </NavLinkContainer>
-          <NavBtnContainer>
+          <NavBtnContainer className="hidden md:flex ">
             <NavBtn>
               <NavBtnLink to="signin">Sign In</NavBtnLink>
             </NavBtn>
           </NavBtnContainer>
-          <MobileIcon>
+          <MobileIcon onClick={toggleIsOpen}>
             <FaBars />
           </MobileIcon>
         </div>

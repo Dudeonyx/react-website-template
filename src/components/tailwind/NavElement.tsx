@@ -40,9 +40,7 @@ export function NavBtnContainer({
   className,
   ...props
 }: ComponentProps<"div">) {
-  return (
-    <div className={"hidden justify-center md:flex " + className} {...props} />
-  );
+  return <div className={"justify-center flex" + className} {...props} />;
 }
 
 export function NavLinkContainer({
