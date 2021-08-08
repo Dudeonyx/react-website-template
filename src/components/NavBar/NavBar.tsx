@@ -12,15 +12,17 @@ import {
 } from '../NavElements';
 import { FaBars } from 'react-icons/fa';
 
-interface INavBarProps {}
+interface INavBarProps {
+  toggleIsOpen: () => void;
+}
 
-export const NavBar: React.FC<INavBarProps> = () => {
+export const NavBar: React.FC<INavBarProps> = ({ toggleIsOpen }) => {
   return (
     <>
       <Nav>
         <NavBarContainer>
           <NavLogo to="/">dolla</NavLogo>
-          <MobileIcon>
+          <MobileIcon onClick={toggleIsOpen}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
