@@ -1,5 +1,4 @@
-import { Component, ComponentProps } from "react";
-import { PropsWithoutRef } from "react";
+import { ComponentProps } from "react";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
 import { GetProps } from "../../types";
@@ -25,7 +24,9 @@ export function NavBtn({ className, ...props }: ComponentProps<"button">) {
   return (
     <button
       className={
-        "bg-teal-500 px-4 py-2 rounded-3xl hover:bg-teal-100 " + className
+        "bg-default-teal-500 px-4 py-2 rounded-3xl hover:bg-teal-100 font-bold" +
+        " " +
+        className
       }
       {...props}
     />
@@ -40,7 +41,7 @@ export function NavBtnContainer({
   className,
   ...props
 }: ComponentProps<"div">) {
-  return <div className={"justify-center flex" + className} {...props} />;
+  return <div className={"justify-center flex" + " " + className} {...props} />;
 }
 
 export function NavLinkContainer({
@@ -50,7 +51,8 @@ export function NavLinkContainer({
   return (
     <ul
       className={
-        "flex-auto justify-around text-white max-w-sm hidden md:flex " +
+        "flex-auto justify-around text-white max-w-sm hidden md:flex" +
+        " " +
         className
       }
       {...props}
@@ -60,7 +62,7 @@ export function NavLinkContainer({
 
 export const MobileIcon = ({ className, ...props }: ComponentProps<"div">) => (
   <div
-    className={"flex md:hidden text-white text-2xl " + className}
+    className={"flex md:hidden text-white text-2xl" + " " + className}
     {...props}
   />
 );
