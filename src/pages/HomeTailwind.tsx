@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./HomeTailwind.css";
 import { SideBarTailwind } from "../components/tailwind/SidebarTailwind";
 import { NavBarTailwind } from "../components/tailwind/NavBarTailwind";
+import { HeroSectionTailwind } from "../components/tailwind/HeroSectionTailwind";
 
 export interface ActiveNav {
   about?: boolean;
@@ -20,15 +21,9 @@ export default function HomeTailwind({
 
   return (
     <div className="App">
-      {/* <SideBar {...{ isOpen, toggleIsOpen }} /> */}
-      <SideBarTailwind
-        isOpen={isOpen}
-        toggleIsOpen={toggleIsOpen}
-      ></SideBarTailwind>
-      <NavBarTailwind
-        toggleIsOpen={toggleIsOpen}
-        active={active}
-      ></NavBarTailwind>
+      <SideBarTailwind isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
+      <NavBarTailwind toggleIsOpen={toggleIsOpen} active={active} />
+      <HeroSectionTailwind />
     </div>
   );
 }
