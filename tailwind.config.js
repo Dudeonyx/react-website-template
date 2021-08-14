@@ -1,4 +1,4 @@
-// eslint: disable-next-line
+/* eslint-env es6 */
 const { teal, emerald, fuchsia } = require('tailwindcss/colors');
 
 module.exports = {
@@ -6,6 +6,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        hero: '50rem',
+      },
       colors: {
         'default-teal': teal,
         teal: {
@@ -18,6 +21,17 @@ module.exports = {
           700: '#017344',
           800: '#004c2d',
           900: '#002617',
+        },
+        dark: {
+          100: '#d3d4d6',
+          200: '#a7aaae',
+          300: '#7b7f85',
+          400: '#4f555d',
+          500: '#232a34',
+          600: '#1c222a',
+          700: '#15191f',
+          800: '#0e1115',
+          900: '#07080a',
         },
         emerald,
         fuchsia,
