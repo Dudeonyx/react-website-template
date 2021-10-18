@@ -25,14 +25,14 @@ export const HeroSectionTailwind = (props: Props) => {
         />
       </div>
       <div className="z-10 flex-auto flex flex-col items-center justify-center md:max-w-5xl mx-6">
-        <h1 className="md:text-4xl font-semibold text-2xl text-white text-center p-1">
+        <h1 className="md:text-4xl font-semibold text-2xl text-white text-center p-2">
           VIRTUAL BANKING MADE EASY
         </h1>
         <p className="text-center text-white text-lg md:text-xl p-1">
           Sign up for a new account today and receive $250 in credit towards
           your next payment.
         </p>
-        <div className="p-1">
+        <div className="p-2">
           <LinkS
             to="signup"
             onMouseEnter={setHoverTrue}
