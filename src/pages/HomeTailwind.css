@@ -1,7 +1,0 @@
-.nav-bar {
-  @apply h-20 bg-black sticky top-0 flex transition-all items-center justify-center -mt-20 z-20;
-}
-
-.nav-container {
-  @apply px-6 flex items-center justify-between container max-w-6xl;
-}
