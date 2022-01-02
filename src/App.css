@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.nav-bar {
+  @apply h-20 bg-black sticky top-0 flex transition-all items-center justify-center -mt-20 z-20;
+}
+
+.nav-container {
+  @apply h-20 px-6 flex items-center justify-between container max-w-6xl;
+}
+
+.hero-gradient::before {
+  @apply inset-0 absolute z-10;
+  background: linear-gradient(180deg, rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.6) 100%),
+    linear-gradient(180deg, rgb(0, 0, 0, 0.2), transparent 100%);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
