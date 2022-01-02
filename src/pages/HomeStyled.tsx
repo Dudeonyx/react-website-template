@@ -11,9 +11,9 @@ export default function HomeStyled({
   toggleIsOpen: () => void;
 }) {
   return (
-    <div className="App">
+    <>
       <SideBar {...{ isOpen, toggleIsOpen }} />
       <NavBar {...{ toggleIsOpen }} />
-    </div>
+    </>
   );
 }

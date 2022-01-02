@@ -1,8 +1,6 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SideBar from "./components/Sidebar/Sidebar";
-import { useCallback, useReducer, useState } from "react";
+import { useReducer } from "react";
 import HomeStyled from "./pages/HomeStyled";
 import HomeTailwind from "./pages/HomeTailwind";
 

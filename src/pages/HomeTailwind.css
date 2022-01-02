@@ -1,5 +1,5 @@
 .nav-bar {
-  @apply h-20 bg-black sticky flex transition-all items-center justify-center;
+  @apply h-20 bg-black sticky top-0 flex transition-all items-center justify-center -mt-20 z-20;
 }
 
 .nav-container {

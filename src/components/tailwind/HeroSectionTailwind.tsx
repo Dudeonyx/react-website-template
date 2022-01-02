@@ -13,7 +13,7 @@ export const HeroSectionTailwind = (props: Props) => {
 
   const Arrow = hover ? MdKeyboardArrowRight : MdArrowForward;
   return (
-    <div className="bg-black flex items-center justify-center py-8 relative h-hero">
+    <div className="bg-black flex items-center justify-center px-8 relative h-hero">
       <div className="absolute inset-0 overflow-hidden w-full h-full">
         <video
           className="w-full h-full object-cover bg-dark-500"
@@ -24,7 +24,7 @@ export const HeroSectionTailwind = (props: Props) => {
           muted
         />
       </div>
-      <div className="z-10 flex-auto flex flex-col items-center justify-center md:max-w-5xl mx-6">
+      <div className="z-10 flex flex-col items-center justify-center max-w-6xl mx-6">
         <h1 className="md:text-4xl font-semibold text-2xl text-white text-center p-2">
           VIRTUAL BANKING MADE EASY
         </h1>

@@ -20,10 +20,10 @@ export default function HomeTailwind({
   const [active, setactive] = useState<ActiveNav>({ about: true });
 
   return (
-    <div className="App">
+    <>
       <SideBarTailwind isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
       <NavBarTailwind toggleIsOpen={toggleIsOpen} active={active} />
       <HeroSectionTailwind />
-    </div>
+    </>
   );
 }
