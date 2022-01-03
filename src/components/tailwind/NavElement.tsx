@@ -6,7 +6,7 @@ import { GetProps } from "../../types";
 export function NavItem({
   active,
   ...props
-}: ComponentProps<"li"> & { active?: boolean }) {
+}: GetProps<"li"> & { active?: boolean }) {
   return (
     <li
       className={`h-20 flex items-center px-2 rounded-b-sm ${
@@ -20,7 +20,7 @@ export function NavLink({ className, ...props }: GetProps<LinkS>) {
   return <LinkS className={className + " " + "cursor-pointer"} {...props} />;
 }
 
-export function NavBtn({ className, ...props }: ComponentProps<"button">) {
+export function NavBtn({ className, ...props }: GetProps<"button">) {
   return (
     <button
       className={

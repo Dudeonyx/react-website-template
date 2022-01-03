@@ -12,6 +12,7 @@
 
 .hero-gradient::before {
   @apply inset-0 absolute z-10;
+  content: "";
   background: linear-gradient(180deg, rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.6) 100%),
     linear-gradient(180deg, rgb(0, 0, 0, 0.2), transparent 100%);
 }

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./HomeTailwind.css";
 import { SideBarTailwind } from "../components/tailwind/SidebarTailwind";
 import { NavBarTailwind } from "../components/tailwind/NavBarTailwind";
 import { HeroSectionTailwind } from "../components/tailwind/HeroSectionTailwind";

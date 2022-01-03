@@ -13,7 +13,15 @@ export const HeroSectionTailwind = (props: Props) => {
 
   const Arrow = hover ? MdArrowForward : MdKeyboardArrowRight;
   return (
-    <div className="bg-black flex items-center justify-center px-8 relative h-hero hero-gradient">
+    <div className="bg-black flex items-center justify-center px-8 relative h-hero">
+      <div
+        className="z-10 absolute inset-0 bg-gradient-to-b from-[rgb(0,0,0,0.2)] to-[rgb(0,0,0,0.9)_100%]"
+        aria-hidden
+      />
+      <div
+        className="z-10 absolute inset-0 bg-gradient-to-b from-[rgb(0,0,0,0.2)] to-transparent"
+        aria-hidden
+      />
       <div className="absolute inset-0 overflow-hidden w-full h-full">
         <video
           className="w-full h-full object-cover bg-dark-500"
