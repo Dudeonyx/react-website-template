@@ -29,10 +29,11 @@ export function SidebarItems({ className, ...props }: ComponentProps<"li">) {
 export function SidebarLink({ className, ...props }: GetProps<typeof LinkS>) {
   return <LinkS className={className} {...props} />;
 }
-export const SideBarCloseIconContainer = (props: {
-  toggleIsOpen: () => void;
-  children: React.ReactNode;
-}) => (
+export const SideBarCloseIconContainer = (
+  props: {
+    toggleIsOpen: () => void;
+  } & GetProps<"div">
+) => (
   <div
     className="h-8 absolute top-10 right-10"
     onClick={(e) => {
@@ -42,22 +43,15 @@ export const SideBarCloseIconContainer = (props: {
     children={props.children}
   />
 );
-export const SidebarList = ({
-  className = "",
-  children,
-}: {
-  className?: string;
-  children: ReactNode;
-}) => (
+export const SidebarList = ({ className = "", ...props }: GetProps<"ul">) => (
   <ul
     className={
       "flex flex-col justify-evenly items-stretch text-2xl text-white" +
       " " +
       className
     }
-  >
-    {children}
-  </ul>
+    {...props}
+  />
 );
 export const SidebarInnerContainer = ({
   className = "",
@@ -76,3 +70,5 @@ export const SidebarInnerContainer = ({
     {children}
   </div>
 );
+
+const t = { className: "hover" };

@@ -1,4 +1,3 @@
-import { ComponentProps } from "react";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
 import { GetProps } from "../../types";
@@ -17,9 +16,11 @@ export function NavItem({
   );
 }
 export function NavLink({ className, ...props }: GetProps<LinkS>) {
-  return <LinkS className={className + " " + "cursor-pointer"} {...props} />;
+  return <LinkS className={"cursor-pointer" + " " + className} {...props} />;
 }
-
+const f = {
+  className: "h-",
+};
 export function NavBtn({ className, ...props }: GetProps<"button">) {
   return (
     <button
@@ -37,17 +38,11 @@ export function NavBtnLink(props: GetProps<typeof LinkR>) {
   return <LinkR {...props} />;
 }
 
-export function NavBtnContainer({
-  className,
-  ...props
-}: ComponentProps<"div">) {
+export function NavBtnContainer({ className, ...props }: GetProps<"div">) {
   return <div className={"justify-center flex" + " " + className} {...props} />;
 }
 
-export function NavLinkContainer({
-  className,
-  ...props
-}: ComponentProps<"ul">) {
+export function NavLinkContainer({ className, ...props }: GetProps<"ul">) {
   return (
     <ul
       className={
@@ -60,7 +55,7 @@ export function NavLinkContainer({
   );
 }
 
-export const MobileIcon = ({ className, ...props }: ComponentProps<"div">) => (
+export const MobileIcon = ({ className, ...props }: GetProps<"div">) => (
   <div
     className={"flex md:hidden text-white text-2xl" + " " + className}
     {...props}
