@@ -15,7 +15,7 @@ export default function HomeStyled({
     <>
       <SideBar {...{ isOpen, toggleIsOpen }} />
       <NavBar {...{ toggleIsOpen }} />
-      <div className="h-10" />
+      <div className="h-hero" />
     </>
   );
 }
